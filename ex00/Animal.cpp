@@ -1,4 +1,4 @@
-#include <Animal.hpp>
+#include "Animal.hpp"
 
 Animal::Animal (void) : type("Default")  {
     std::cout << "Animal : " << this->type << " Constructor is Called ." << std::endl;  /*---*/  }
@@ -12,6 +12,14 @@ Animal &Animal::operator =(const Animal &_Animal)    {
     if (this != &_Animal)
         this->type = _Animal.type;
     return ( *this );   /*----*/    }
+
+void Animal::makeSound ( void ) const   {
+    std::cout << "Animal : " << this->type << " SONNN ANIMAL ." << std::endl;
+    /*-----*/  }
+
+std::string Animal::getType (void) const    {
+    return (this->type);
+    /*----*/    }
 
 Animal::~Animal (void)   {
     std::cout << "Animal : " << this->type << " destructor is called ." << std::endl;  /*---*/   }

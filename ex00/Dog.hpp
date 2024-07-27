@@ -1,7 +1,7 @@
 # ifndef DOG_HPP
 # define DOG_HPP
 
-#include <Animal.hpp>
+#include "Animal.hpp"
 
 class Dog : public Animal
 {
@@ -9,8 +9,9 @@ class Dog : public Animal
 
     public:
         Dog ( void );
-        Dog(const Dog &dog);
+        Dog (const Dog &dog);
         Dog &operator = (const Dog &);
+        void makeSound ( void ) const;
         ~Dog ( void );
 };
 
