@@ -1,0 +1,27 @@
+#include "Ice.hpp"
+
+Ice::Ice ( void )   {
+    this->type = "ice";
+    std::cout << "Ice : " << this->type << " Constructor is Called ." << std::endl;
+}
+
+Ice::Ice(const Ice &_Ice)   {
+    *this = _Ice;
+    std::cout << "Ice : " << this->type << " Copy Constructor is Called ." << std::endl;
+}
+
+Ice &Ice::operator =(const Ice &_Ice)    {
+    std::cout << "Ice : " << this->type << " assignment operator is Called." << std::endl;
+    if (this != &_Ice)
+        this->type = _Ice.type;
+    return ( *this );
+}
+
+AMateria*   Ice::clone () const {
+    std::cout << "Ice     is    Clone ." << std::endl;
+    return (new Ice());
+}
+
+Ice::~Ice ( void )  {
+    std::cout << "Ice : " << this->type << " Destructor is Called ." << std::endl;
+}
