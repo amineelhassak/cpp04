@@ -19,6 +19,18 @@ Character &Character::operator =(const Character &_Character)    {
     return ( *this );
 }
 
+std::string const & Character::getName() const  { 
+    return (this->name);
+}
+
+void Character::unequip (int idx)    {
+
+}
+
+void Character::equip (AMateria* m)   {
+    
+}
+
 Character::~Character (  void ) {
     std::cout << "Character : destructor is called ." << std::endl;
 }
