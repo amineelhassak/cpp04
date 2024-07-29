@@ -1,6 +1,5 @@
 #include "MateriaSource.hpp"
 
-int MateriaSource::index = 0;
 
 MateriaSource::MateriaSource ( void )
 {
@@ -24,34 +23,25 @@ MateriaSource &MateriaSource::operator = (const MateriaSource &_MateriaSource)
     return ( *this );
 }
 
-void MateriaSource::learnMateria(AMateria* _Amateria) {
-    if (index < 4 && _Amateria)
-    {
-        this->box[index] = _Amateria;
-        index++;
-        std::cout << "Materia " << _Amateria->getType() << " learned\n";
-    }
+void    MateriaSource::learnMateria(AMateria* _Amateria) {
+    int count = 0;
+    for(;this->box[count]; count++)
+        {}
+    if (count < 4 && _Amateria)
+        (1) && (this->box[count] = _Amateria, std::cout << "Materia " << _Amateria->getType() << " learned\n");
     else
-    {
-        std::cout << "MateriaSource : Error in Learning Materia." << std::endl;
-        delete _Amateria;
-    }
+        (1) && (std::cout << "MateriaSource : Error in Learning Materia." << std::endl , delete _Amateria, 0);
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)   {
-    for(int i = 0;i < 4;i++)
-    {
+    for(int i = 0; i < 4; i++)
         if (box[i]->getType() == type)
             return (box[i]->clone());
-    }
     return (0);
 }
 
 MateriaSource::~MateriaSource (  void ) {
-    for(int i = 0; this->box[i];i++)
-    {
-        delete (this->box[i]);
-        this->box[i] = NULL;
-    }
+    for (int i = 0; this->box[i];i++)
+        (1) && (delete (this->box[i]),this->box[i] = NULL);
     std::cout << "MateriaSource : destructor is called ." << std::endl;
 }

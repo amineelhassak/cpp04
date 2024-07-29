@@ -4,13 +4,12 @@ AMateria::AMateria () : type("default_AMateria"){
     std::cout << "AMateria : " << this->type << " Default Constructor is Called ." << std::endl;
 }
 
-
-
 AMateria::AMateria (const AMateria &_AMateria)   {
     *this = _AMateria;    
-    std::cout << "AMateria : " << this->type << " Copy Constructor is Called ." << std::endl; /*---*/ }
+    std::cout << "AMateria : " << this->type << " Copy Constructor is Called ." << std::endl;
+}
 
-AMateria &AMateria::operator =(const AMateria &_AMateria)    {
+AMateria &AMateria::operator = (const AMateria &_AMateria)    {
     std::cout << "AMateria : " << this->type << " assignment operator is Called." << std::endl;
     if (this != &_AMateria)
         this->type = _AMateria.type;

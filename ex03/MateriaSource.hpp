@@ -9,7 +9,6 @@ class MateriaSource : public IMateriaSource
 {
     protected :
         AMateria *box[4];
-        static int index;
     public :
         MateriaSource &operator = (const MateriaSource &_MateriaSource);
         MateriaSource (const MateriaSource &_MateriaSource);
