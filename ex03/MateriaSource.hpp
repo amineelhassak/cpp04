@@ -11,11 +11,13 @@ class MateriaSource : public IMateriaSource
         AMateria *box[4];
         static int index;
     public :
+        MateriaSource &operator = (const MateriaSource &_MateriaSource);
+        MateriaSource (const MateriaSource &_MateriaSource);
         MateriaSource ( void ) ;
-        MateriaSource (AMateria *_box) ;
+        ~MateriaSource ( void ) ;
+
         void learnMateria(AMateria*);
         AMateria * createMateria(std::string const &);
-        ~MateriaSource ( void ) ;
 };
 
 #endif

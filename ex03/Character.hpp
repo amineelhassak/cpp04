@@ -7,9 +7,11 @@ class Character : public ICharacter
 {
     private:
         std::string name;
+        AMateria *box[4];
+        AMateria *garb[4];
     public:
         Character ( void );
-        Character ( std::string &);
+        Character ( const std::string &);
         Character (const Character &);
         Character &operator = (const Character &);
         std::string const & getName() const;

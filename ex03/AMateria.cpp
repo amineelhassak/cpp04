@@ -4,9 +4,7 @@ AMateria::AMateria () : type("default_AMateria"){
     std::cout << "AMateria : " << this->type << " Default Constructor is Called ." << std::endl;
 }
 
-AMateria::AMateria (std::string _type) : type(_type)    {
-    std::cout << "AMateria : " << this->type << " Default Constructor is Called ." << std::endl;
-}
+
 
 AMateria::AMateria (const AMateria &_AMateria)   {
     *this = _AMateria;    
