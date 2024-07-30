@@ -18,8 +18,13 @@ MateriaSource &MateriaSource::operator = (const MateriaSource &_MateriaSource)
 {
     std::cout << "MateriaSource : assignment operator is Called." << std::endl;
     if (this != &_MateriaSource)
-        for (int i = 0; this->box[i]; i++)
-            *(this->box[i]) = *(_MateriaSource.box[i]);
+    {
+        for (int i = 0; i < 4 ; i++)
+            (1) && (delete this->box[i],this->box[i] = 0);
+        for (int i = 0; i< 4 ; i++)
+            if (_MateriaSource.box[i])
+                *(this->box[i]) = _MateriaSource.box[i]->clone();
+    }
     return ( *this );
 }
 
