@@ -6,15 +6,15 @@
 
 class Cure : public AMateria
 {
-    private:
-        
     public:
-        Cure ( void );
-        Cure(const Cure &Cure);
-        Cure &operator = (const Cure &);
-        AMateria* clone ( void ) const;
-        void use(ICharacter& target);
-        ~Cure ( void );
+        /*************************************/
+            Cure ( void );
+            Cure(const Cure &Cure);
+            Cure &operator = (const Cure &);
+            ~Cure ( void );
+        /*************************************/
+            AMateria* clone ( void ) const;
+            void use(ICharacter& target);
 };
 
 # endif
