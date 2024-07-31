@@ -4,24 +4,23 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-void f(void)
+//Test Leaks
+void Leaks(void)
 {
     system("leaks Animal");
 }
 
-int main()
+int main ( void )
 {
     Animal *_Animal  = new Animal[20];
-    for (int i = 0 ; i < 200 ; i++)
+    for (int i = 0 ; i < 20 ; i++)
     {
         if (!(i % 2))
             _Animal[i] = Cat();
         else
             _Animal[i] = Dog();
     }
-    for (int i = 0;i < 20;i++)
+    for (int i = 0; i < 20; i++)
         std::cout << "Animal type : " << _Animal[i].getType() << std::endl;
-    for (int i = 0 ; i < 20 ; i++)
-        delete &_Animal[i];
-    return (0);
+    return (delete[] _Animal, 0);
 }

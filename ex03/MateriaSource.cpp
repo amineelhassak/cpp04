@@ -23,7 +23,7 @@ MateriaSource &MateriaSource::operator = (const MateriaSource &_MateriaSource)
             (1) && (delete this->box[i],this->box[i] = 0);
         for (int i = 0; i< 4 ; i++)
             if (_MateriaSource.box[i])
-                *(this->box[i]) = _MateriaSource.box[i]->clone();
+                (this->box[i]) = _MateriaSource.box[i]->clone();
     }
     return ( *this );
 }

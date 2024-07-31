@@ -1,4 +1,5 @@
 SRCS = $(wildcard *.cpp)
+HPP = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 EXEC =	AMateria
 
@@ -10,7 +11,7 @@ all: $(EXEC)
 $(EXEC): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(EXEC)
 
-%.o: %.cpp Animal.hpp Cat.hpp Dog.hpp
+%.o: %.cpp $(HPP)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

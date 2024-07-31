@@ -3,20 +3,18 @@
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-void f(void)
+
+//Test Leaks
+void Leaks(void)
 {
     system("leaks Animal");
 }
 
-int main()
+int main ( void )
 {
-    Cat cat; 
-    Dog  dog;
-    cat.makeSound ();
-    dog.makeSound ();
-    Animal *_Animal1 = &cat;
-    Animal *_Animal2 = &dog;
-    _Animal1->makeSound ();
-    _Animal2->makeSound ();
-    return (0);
+    Animal *_Animal_dog  = new Dog;
+    Animal *_Animal_cat  = new Cat;
+    std::cout << "Animal type : " << _Animal_dog->getType() << std::endl;
+    std::cout << "Animal type : " << _Animal_cat->getType() << std::endl;
+    return (delete _Animal_dog, delete _Animal_cat, 0);
 }

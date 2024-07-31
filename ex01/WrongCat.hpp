@@ -5,8 +5,6 @@
 
 class WrongCat : public WrongAnimal
 {
-    private:
-
     public:
         WrongCat ( void );
         WrongCat(const WrongCat &WrongCat);

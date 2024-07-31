@@ -47,11 +47,10 @@ std::string const & Character::getName() const
 
 void Character::unequip (int idx)
 {
-    // for()
     if  ( idx < 4 && idx >= 0 && box[idx])
     {
         this->garb[idx] = box[idx];
-        std::cout<< "Charactere : "<< box[idx]->getType() <<"Unequip " << std::endl;
+        std::cout<< "Charactere : "<< box[idx]->getType() <<" pos ====> "<< idx << " Unequip " << std::endl;
         box[idx] = NULL;
     }
     else    std::cout<< "Charactere : Error Unequip " << std::endl;
@@ -61,12 +60,12 @@ void Character::equip (AMateria* m)
 {
     for(int i = 0;i < 4;i++)
     {
-        if(!box[i])
+        if (!box[i])
         {
-            std::cout << "Character : " << this->name << " Equip ." << std::endl;
+            std::cout << "Character : " << this->name << "in pos =====> " << i << " Equip ." << std::endl;
             this->box[i] = m;
             this->oxe();
-            return;
+            return ;
         }
     }
     (1) && (std::cout << "Character : " << this->name << "Error Equip ." << std::endl ,delete m, 0);

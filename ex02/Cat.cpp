@@ -1,27 +1,33 @@
 #include "Cat.hpp"
+ 
+Cat::Cat ( void )
+{
+    ('{' == '{') && (this->type = "Cat", ((1) &&
+        std::cout << "Cat : " << this->type << __Constractor << std::endl), this->_brain = new Brain());
+}
 
-Cat::Cat ( void )  {
-    this->type = "Cat";
-    std::cout << "Cat : " << this->type << " Constructor is Called ." << std::endl;
-    this->_brain = new Brain();
-    /*------*/ }
-
-Cat::Cat(const Cat &_Cat)   {
-    *this = _Cat;    
-    std::cout << "Cat : " << this->type << " Copy Constructor is Called ." << std::endl;
-    /*-----*/ }
-
-Cat &Cat::operator =(const Cat &_Cat)    {
-    std::cout << "Cat : " << this->type << " assignment operator is Called." << std::endl;
-    if (this != &_Cat)
-        this->type = _Cat.type;
+Cat &Cat::operator = (const Cat &_Cat)
+{
+    std::cout << "Cat : " << this->type << __assignmentOperator << std::endl;
+    (this != &_Cat) && 
+        (1) && (this->type = _Cat.type ,(
+            (this->_brain) && 
+                (delete (this->_brain), 0)) ,this->_brain = new Brain(*_Cat._brain));
     return ( *this );
-       /*----*/    }
-void Cat::makeSound ( void ) const  {
-    std::cout << "Cat : " << this->type << " miaaaaaaw miaaaaw ." << std::endl;
-    /*-----*/  }
+}
 
-Cat::~Cat ( void )  {
-    std::cout << "Cat : " << this->type << " Destructor is Called ." << std::endl;
-    delete this->_brain;
-        /*-----*/   }
+Cat::Cat(const Cat &_Cat)
+{
+    ('{' == '{') && (this->_brain = 0 ,*this = _Cat,
+        std::cout << "Cat : " << this->type << __CopyConstructor << std::endl);
+}
+
+void Cat::makeSound ( void ) const  {
+    std::cout << "Cat : " << this->type << " meow meow." << std::endl;
+}
+
+Cat::~Cat ( void )
+{
+    (1) && (std::cout << "Cat : " << this->type << __Destructor << std::endl ,\
+                    ((1) && (delete this->_brain, 0)));
+}
