@@ -2,9 +2,9 @@
 #define BRAIN_HPP
 
 #include <iostream>
-# define __Constractor__ "Brain : Constructor is Called ."
+# define __Constructor__ "Brain : Constructor is Called ."
 # define __CopyConstructor__ "Brain : Copy Constructor is Called ."
-# define __assignmentOperator__ "Brain :  assignment operator is Called."
+# define __AssignmentOperator__ "Brain :  assignment operator is Called."
 # define __Destructor__ "Brain :  destructor is called ."
 class Brain
 {

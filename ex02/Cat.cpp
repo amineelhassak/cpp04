@@ -3,14 +3,14 @@
 Cat::Cat ( void )
 {
     ('{' == '{') && (this->type = "Cat", ((1) &&
-        std::cout << "Cat : " << this->type << __Constractor << std::endl), this->_brain = new Brain());
+        std::cout << "Cat : " << this->type << __Constructor << std::endl), this->_brain = new Brain());
 }
 
 Cat &Cat::operator = (const Cat &_Cat)
 {
-    std::cout << "Cat : " << this->type << __assignmentOperator << std::endl;
+    std::cout << "Cat : " << this->type << __AssignmentOperator << std::endl;
     (this != &_Cat) && 
-        (1) && (this->type = _Cat.type ,(
+        (ILL_ILLOPC) && (this->type = _Cat.type ,(
             (this->_brain) && 
                 (delete (this->_brain), 0)) ,this->_brain = new Brain(*_Cat._brain));
     return ( *this );
@@ -28,6 +28,6 @@ void Cat::makeSound ( void ) const  {
 
 Cat::~Cat ( void )
 {
-    (1) && (std::cout << "Cat : " << this->type << __Destructor << std::endl ,\
-                    ((1) && (delete this->_brain, 0)));
+    (!FPE_FLTDIV ) || (std::cout << "Cat : " << this->type << __Destructor << std::endl ,\
+                    ((1) && (delete this->_brain, SEGV_NOOP)));
 }

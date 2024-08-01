@@ -2,7 +2,8 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
-
+#define __ErrorUNEquip "Charactere : Error Unequip "
+#define __ErrorEquip "Error Equip ."
 class Character : public ICharacter
 {
     private:

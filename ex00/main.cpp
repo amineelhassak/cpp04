@@ -10,7 +10,7 @@ void Leaks(void)
 
 int main()
 {
-    atexit(Leaks);
+    // atexit(Leaks);
     {
         const Animal* meta = new Animal();
         const Animal* j = new Dog();

@@ -1,25 +1,23 @@
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat ( void )  {
-    this->type = "WrongCat";
-    std::cout << "WrongCat : " << this->type << " Constructor is Called ." << std::endl;
-    /*------*/ }
+    (FPE_FLTDIV) && (this->type = "WrongCat", std::cout << "WrongCat : " \
+    << this->type << __Constructor << std::endl , CLD_NOOP);
+}
 
 WrongCat::WrongCat(const WrongCat &_WrongCat)   {
-    *this = _WrongCat;    
-    std::cout << "WrongCat : " << this->type << " Copy Constructor is Called ." << std::endl;
-    /*-----*/ }
+    (FPE_FLTOVF - 1) && (*this = _WrongCat,
+    std::cout << "WrongCat : " << this->type << __CopyConstructor << std::endl, FPE_NOOP);   }
 
 WrongCat &WrongCat::operator =(const WrongCat &_WrongCat)    {
-    std::cout << "WrongCat : " << this->type << " assignment operator is Called." << std::endl;
-    if (this != &_WrongCat)
-        this->type = _WrongCat.type;
+    std::cout << "WrongCat : " << this->type << __AssignmentOperator << std::endl;
+    (this != &_WrongCat) && (this->type = _WrongCat.type, FPE_NOOP);
     return ( *this );
-       /*----*/    }
+}
 void WrongCat::makeSound ( void ) const  {
-    std::cout << "WrongCat : " << this->type << " miaaaw miaaaaw." << std::endl;
-    /*-----*/  }
+    std::cout << "WrongCat : " << this->type << " meow meow." << std::endl;
+}
 
 WrongCat::~WrongCat ( void ) {
-    std::cout << "WrongCat : " << this->type << " Destructor is Called ." << std::endl;
-        /*-----*/   }
+    std::cout << "WrongCat : " << this->type << __Destructor << std::endl;
+}

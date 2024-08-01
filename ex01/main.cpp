@@ -12,15 +12,16 @@ void Leaks(void)
 
 int main ( void )
 {
-    Animal *_Animal  = new Animal[20];
-    for (int i = 0 ; i < 20 ; i++)
+    // atexit(Leaks);
+    Animal *_Animal  = new Animal[5];
+    for (int i = 0 ; i < 5 ; i++)
     {
         if (!(i % 2))
             _Animal[i] = Cat();
         else
             _Animal[i] = Dog();
     }
-    for (int i = 0; i < 20; i++)
+    for (int i = 0; i < 5; i++)
         std::cout << "Animal type : " << _Animal[i].getType() << std::endl;
     return (delete[] _Animal, 0);
 }

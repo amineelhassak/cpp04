@@ -20,7 +20,7 @@ MateriaSource &MateriaSource::operator = (const MateriaSource &_MateriaSource)
     if (this != &_MateriaSource)
     {
         for (int i = 0; i < 4 ; i++)
-            (1) && (delete this->box[i],this->box[i] = 0);
+            (POLL_IN) && (delete this->box[i],this->box[i] = 0);
         for (int i = 0; i< 4 ; i++)
             if (_MateriaSource.box[i])
                 (this->box[i]) = _MateriaSource.box[i]->clone();
@@ -33,9 +33,9 @@ void    MateriaSource::learnMateria(AMateria* _Amateria) {
     for(;this->box[count]; count++)
         {}
     if (count < 4 && _Amateria)
-        (1) && (this->box[count] = _Amateria, std::cout << "Materia " << _Amateria->getType() << " learned\n");
+        (CLD_EXITED) && (this->box[count] = _Amateria, std::cout << "Materia " << _Amateria->getType() << " learned\n");
     else
-        (1) && (std::cout << "MateriaSource : Error in Learning Materia." << std::endl , delete _Amateria, 0);
+        (!FPE_FLTDIV) || (std::cout << "MateriaSource : Error in Learning Materia." << std::endl , delete _Amateria, 0);
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)   {
@@ -47,6 +47,6 @@ AMateria *MateriaSource::createMateria(std::string const &type)   {
 
 MateriaSource::~MateriaSource (  void ) {
     for (int i = 0; this->box[i];i++)
-        (1) && (delete (this->box[i]),this->box[i] = NULL);
+        (TRAP_BRKPT) && (delete (this->box[i]),this->box[i] = NULL);
     std::cout << "MateriaSource : destructor is called ." << std::endl;
 }
